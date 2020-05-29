@@ -23,6 +23,9 @@ public:
 
     template <class T>
     int Func1(const T &t);
+
+    template <class T>
+    int Func2(const T &t);
 };
 
 Sensei::Sensei(int weight, int height, char cup) : weight(weight), height(height), cup(cup)

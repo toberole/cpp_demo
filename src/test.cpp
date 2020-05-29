@@ -42,7 +42,15 @@ struct Test_4
 {
 };
 
-// 方法四 在原始类中开个后门[在原始类中定一个模版函数]
+// 方法四 在原始类中开个后门[在原始类中申明一个模版函数]
+template <class Test_4>
+int Sensei::Func2(const Test_4&t){
+    // 访问私有Sensei的私有属性
+    height = 0;
+    weight = 0;
+    cup = 'B';
+}
+
 void test4()
 {
     Sensei sensei_tem(100, 200, 'A');
@@ -52,6 +60,9 @@ void test4()
     sensei_tem.Func(t);
     sensei_tem.Print();
     std::cout << "weight: " << sensei_tem.Func1(t) << std::endl;
+
+    sensei_tem.Func2(t);
+    sensei_tem.Print();
 }
 
 int main(int argc, char const *argv[])
